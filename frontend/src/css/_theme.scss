@@ -1,0 +1,71 @@
+$first-color : #05234a;
+	
+$second-color : #005792; 
+
+$third-color : #00bbf0; 
+
+$fourth-color : #fdb44b;
+
+$background: #f8f9fa;
+$form-background: white;
+$input: rgb(232, 229, 229);
+$black: #212529;
+$grey: #6c757d;
+$light-grey : rgb(236, 233, 233);
+$btn-text: #ffffff;
+
+$error: #dc3545;
+$error-hover: #af2634;
+$error-light: #f8d7da;
+
+$success: #28a745;
+$success-light: #d4edda;
+
+$warning: #fd7e14;
+$warning-light: #fff3cd;
+
+$info: #0dcaf0;
+$info-light: #cff4fc;
+
+$border-color: #dee2e6;
+$box-shadow : 0px 2px 6px 0px #cccc;
+
+// mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+} 
+
+@mixin grid-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin error-message {
+  color: $error;
+  font-size: smaller;
+  padding: 0.25rem;
+}
+
+@mixin success-message{
+  color: $success;
+  font-size: smaller;
+  padding: 0.25rem;
+}
+
+@mixin warning-message{
+  color: $warning;
+  font-size: smaller;
+  padding: 0.25rem;
+}
+
+@mixin jump-effect{
+  transform: translateY(-4px);
+  transition: 0.3s ease-in;
+  box-shadow: $box-shadow;
+}
+
+@mixin inputGroup{
+  margin: 1rem;
+  @include grid-center;
+} 
