@@ -1,0 +1,9 @@
+@use "../../css/theme" as *;
+
+.unauthorised{
+  min-height: 100vh;
+  @include grid-center;
+  color: $first-color;
+  font-size: 1.5em;
+  background-color: $background;
+}

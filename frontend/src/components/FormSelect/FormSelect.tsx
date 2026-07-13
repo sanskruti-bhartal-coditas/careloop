@@ -28,7 +28,16 @@ const FormSelect = <T extends FieldValues>({
             {...props}
             className={multipleClass(["formSelect", className ?? ""])}
           >
-            
+            {/* default selected option */}
+            <option value="disabled" disabled>Select an option...</option>
+
+            {options.map((option) => (
+
+              <option key={String(option.value)} value={String(option.value)}>
+                {option.label}
+              </option>
+
+            ))}
           </select>
         </FormField>
       )}
