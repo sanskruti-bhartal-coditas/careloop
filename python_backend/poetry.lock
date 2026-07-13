@@ -386,6 +386,18 @@ files = [
 ]
 
 [[package]]
+name = "pgvector"
+version = "0.5.0"
+description = "pgvector support for Python"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "pgvector-0.5.0-py3-none-any.whl", hash = "sha256:fedc9800894e6da2be51358d7b7c574bf34f247ca741a5a09513622135f5964f"},
+    {file = "pgvector-0.5.0.tar.gz", hash = "sha256:07a9dcf735696879406983afc6eba9a787cef7c0cf6c367ca1a5779f036dee74"},
+]
+
+[[package]]
 name = "psycopg2"
 version = "2.9.12"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
@@ -742,4 +754,4 @@ typing-extensions = ">=4.12.0"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12"
-content-hash = "430adef19cae6604efd804f20821b2107d21a0e8cf5460cceb19253be04bbeaf"
+content-hash = "b940f1e3272cd0aa17be19bf54abe9b9b378191bfde3cc862545d2a3cfeedc16"
