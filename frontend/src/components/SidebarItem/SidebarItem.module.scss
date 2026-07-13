@@ -1,0 +1,13 @@
+@use "../../css/theme" as *;
+
+.sideBarItem{
+  display: block;
+  background-color: $light;
+  color: $first-color;
+  text-decoration: none;
+  margin: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: $box-shadow;
+}
