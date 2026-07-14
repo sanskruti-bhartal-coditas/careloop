@@ -1,5 +1,6 @@
 package org.project.javabackend.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.project.javabackend.dto.request.PatientProfileRequestDto;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class PatientService {
 
     private final PatientDetailsRepo patientDetailsRepo;

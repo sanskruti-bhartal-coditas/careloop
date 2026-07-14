@@ -1,5 +1,6 @@
 package org.project.javabackend.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.project.javabackend.dto.request.AppointmentRequestDto;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional
 public class AppointmentService {
 
     private final AppointmentRepo appointmentRepo;

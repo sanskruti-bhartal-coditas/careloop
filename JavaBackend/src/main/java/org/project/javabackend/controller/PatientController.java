@@ -33,12 +33,12 @@ public class PatientController {
     }
 
    //  see the appointments
-    @GetMapping("/appointments")
-
-
-
-    // appointment based on id
-    @GetMapping("/appointments/{id}")
+//    @GetMapping("/appointments")
+//    public ResponseEntity<>
+//
+//
+//    // appointment based on id
+//    @GetMapping("/appointments/{id}")
 
 //    public ResponseEntity<>
 

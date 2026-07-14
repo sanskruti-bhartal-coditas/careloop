@@ -2,6 +2,7 @@ package org.project.javabackend.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.jspecify.annotations.Nullable;
 import org.project.javabackend.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,9 +29,6 @@ public class User implements UserDetails {
     @Column(name = "email",unique = true,nullable = false)
     private String email;
 
-    @Column(name = "password", nullable = false)
-    private String password;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
@@ -50,6 +48,11 @@ public class User implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_"+role));
+    }
+
+    @Override
+    public @Nullable String getPassword() {
+        return "";
     }
 
     @Override

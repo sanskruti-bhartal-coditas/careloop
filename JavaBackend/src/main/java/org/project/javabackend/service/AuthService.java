@@ -1,5 +1,6 @@
 package org.project.javabackend.service;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,6 +28,7 @@ import java.util.Random;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional
 public class AuthService {
 
     private final UserService userService;

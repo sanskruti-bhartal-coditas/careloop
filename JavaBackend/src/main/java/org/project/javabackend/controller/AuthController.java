@@ -39,7 +39,7 @@ public class AuthController {
     }
 
 
-    @DeleteMapping("/logout")
+    @PostMapping("/logout")
     public ResponseEntity<GenericResponse> logout(){
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body(authService.logout());
     }
