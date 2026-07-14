@@ -1,0 +1,5 @@
+@use "../../css/theme" as *;
+
+.errorMessage{
+  @include error-message
+}

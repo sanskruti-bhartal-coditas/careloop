@@ -1,0 +1,28 @@
+@use "../../css/theme" as *;
+
+.button {
+  border: none;
+  padding: 0.25rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primary {
+  color: $btn-text;
+  background-color: $first-color;
+}
+
+.secondary {
+  color: $btn-text;
+  background-color: $second-color;
+}
+
+.success {
+  color: $btn-text;
+  background-color: $success;
+}
+
+.error {
+  color: $btn-text;
+  background-color: $error;
+}

@@ -1,0 +1,9 @@
+@use "../../css/theme" as *;
+
+.input{
+  margin: 0.5rem;
+  background-color: $form-background;
+  border: thin solid $border-color;
+  padding: 0.25rem;
+  border-radius: 4px;
+}

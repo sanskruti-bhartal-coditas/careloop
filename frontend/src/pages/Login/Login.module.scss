@@ -1,0 +1,34 @@
+@use "../../css/theme" as *;
+
+.main {
+  min-height: 100vh;
+  @include grid-center;
+  background-color: $light-grey;
+}
+
+.formContainer {
+  background-color: $form-background;
+  padding: 3rem;
+  border: thin solid $first-color;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: 100%;
+  max-width: 450px;
+
+  h2 {
+    color: $first-color;
+    text-align: center;
+  }
+}
+
+.errorMessage {
+  color: $error;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}

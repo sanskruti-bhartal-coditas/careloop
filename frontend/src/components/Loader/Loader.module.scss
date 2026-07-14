@@ -1,0 +1,9 @@
+  @use "../../css/theme" as *;
+
+.loader {
+  @include grid-center;
+  width: 100%;
+  padding: 2rem;
+  color: $first-color;
+  text-align: center;
+}
