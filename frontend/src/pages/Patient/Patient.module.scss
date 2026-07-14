@@ -1,0 +1,8 @@
+@use "../../css/theme" as *;
+
+.section {
+  min-height: 100vh;
+  background-color: $light-grey;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+}
