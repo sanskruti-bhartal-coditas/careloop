@@ -1,4 +1,4 @@
-package org.project.javabackend.dto.request;
+package org.project.javabackend.dto.response;
 
 import org.springframework.http.HttpStatus;
 

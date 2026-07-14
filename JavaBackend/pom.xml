@@ -106,6 +106,17 @@
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
 
+<!--        s3-->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>s3</artifactId>
+            <version>2.25.14</version>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>dynamodb-enhanced</artifactId>
+            <version>2.25.17</version> <!-- use latest version -->
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -24,7 +25,7 @@ public class OtpValidation {
 
     private String otp;
 
-    private LocalDateTime expirationTime;
+    private Date expirationTime;
 
     private boolean validated;
 
