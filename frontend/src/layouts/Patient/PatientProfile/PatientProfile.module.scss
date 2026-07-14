@@ -1,0 +1,9 @@
+@use "../../css/theme" as *;
+
+.successMessage{
+  @include success-message;
+}
+
+.errorMessage{
+  @include error-message;
+}

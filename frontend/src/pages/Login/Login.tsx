@@ -39,7 +39,7 @@ const Login = () => {
 
   const onOtpSubmit = async (data: VerifyOtpRequest) => {
     try {
-      const tokenResponse = await verifyOtp({ email: emailSentTo, otp: data.otp }).unwrap();
+      const tokenResponse = await verifyOtp(data).unwrap();
       setTokens(tokenResponse.accessToken, tokenResponse.refreshToken);
 
       const userDetails = await getUserData().unwrap();
