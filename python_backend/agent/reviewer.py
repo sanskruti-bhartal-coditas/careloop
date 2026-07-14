@@ -25,7 +25,7 @@ Respond ONLY with valid JSON — no markdown, no preamble:
         doc_section = ""
         if context.document_texts:
             doc_section = "\n\nATTACHED DOCUMENTS:\n"
-            doc_section += "\n\n-\n\n".join(context.document_texts)
+            doc_section+= "\n\n-\n\n".join(context.document_texts)
 
         user_prompt = f"""
 APPOINTMENT TYPE: {context.appointment_type}

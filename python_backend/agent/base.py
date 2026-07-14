@@ -2,6 +2,7 @@ import json
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from groq import AsyncGroq
+from config import settings
 
 
 @dataclass
@@ -42,7 +43,7 @@ class RequestContext:
 class BaseReviewer(ABC):
 
     def __init__(self):
-        self.client = AsyncGroq()
+        self.client = AsyncGroq(api_key=settings.GROQ_API_KEY)
         self.model = "llama-3.3-70b-versatile"
 
     @property

@@ -22,7 +22,7 @@ class AppointmentRequest(Base):
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
 
-    documents = relationship("PatientDoc", back_populates="request")
+    documents = relationship("Patient_Doc", back_populates="request")
     panel_reviews = relationship("PanelReview", back_populates="request", cascade="all, delete-orphan")
     panel_summary = relationship("PanelSummary", back_populates="request", uselist=False, cascade="all, delete-orphan")
     notifications = relationship("Notification", back_populates="request")

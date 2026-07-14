@@ -18,7 +18,7 @@ class NotificationType(str,enum.Enum):
     new_request="new_request"
     otp="otp"
     welcome="welcome"
-
+    panel_complete="panel_complete"
 
 class PanelReview(Base):
     __tablename__ = "panel_review"
@@ -31,7 +31,6 @@ class PanelReview(Base):
     error_message = Column(Text)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    request = relationship("AppointmentRequest", back_populates="panel_reviews")
 
 
 class PanelSummary(Base):
@@ -47,6 +46,7 @@ class PanelSummary(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     request = relationship("AppointmentRequest", back_populates="panel_summary")
+    request = relationship("AppointmentRequest", back_populates="panel_reviews")
 
 
 class Notification(Base):
