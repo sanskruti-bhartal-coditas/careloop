@@ -1,5 +1,6 @@
 package org.project.javabackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.project.javabackend.dto.request.AppointmentRequestDto;
 import org.project.javabackend.dto.request.PatientProfileRequestDto;
@@ -7,10 +8,7 @@ import org.project.javabackend.dto.response.GenericResponse;
 import org.project.javabackend.service.AppointmentService;
 import org.project.javabackend.service.PatientService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,13 +20,13 @@ public class PatientController {
 
     // profile update
     @PostMapping("/profile")
-    public ResponseEntity<GenericResponse> addProfile(PatientProfileRequestDto profileRequestDto){
+    public ResponseEntity<GenericResponse> addProfile(@Valid @RequestBody PatientProfileRequestDto profileRequestDto){
         return ResponseEntity.ok(patientService.addProfile(profileRequestDto));
     }
 
     // new appointment request
     @PostMapping("/appointment")
-    public ResponseEntity<GenericResponse> requestAppointment(AppointmentRequestDto appointmentRequestDto){
+    public ResponseEntity<GenericResponse> requestAppointment(@Valid @RequestBody AppointmentRequestDto appointmentRequestDto){
         return ResponseEntity.ok(appointmentService.createAppointment(appointmentRequestDto));
     }
 

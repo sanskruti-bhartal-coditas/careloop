@@ -1,7 +1,9 @@
 package org.project.javabackend.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.project.javabackend.dto.request.AccountRequestDto;
+import org.project.javabackend.dto.request.AppointmentTypeRequestDto;
 import org.project.javabackend.dto.response.GenericResponse;
 import org.project.javabackend.service.AdminService;
 import org.springframework.http.HttpStatus;
@@ -17,7 +19,7 @@ public class AdminController {
 
     // create account
     @PostMapping("/account")
-    public ResponseEntity<GenericResponse> createAccount(AccountRequestDto accountRequestDto){
+    public ResponseEntity<GenericResponse> createAccount(@Valid @RequestBody AccountRequestDto accountRequestDto){
         return ResponseEntity.ok(adminService.createAccount(accountRequestDto));
     }
 
@@ -31,4 +33,9 @@ public class AdminController {
 
 
     // create type of appointments
+    @PostMapping("/add-appointment-type")
+    public ResponseEntity<GenericResponse> addAppointmentType(@Valid @RequestBody AppointmentTypeRequestDto appointmentTypeRequestDto){
+        return ResponseEntity.ok(adminService.createAppointmentType(appointmentTypeRequestDto));
+    }
+
 }
