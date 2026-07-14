@@ -14,7 +14,7 @@ class Patient_Disease(Base):
     id=Column(UUID(as_uuid=True),primary_key=True,default=uuid.uuid4)
     patient_id=Column(UUID(as_uuid=True),ForeignKey("users.id"),nullable=False)
     disease=Column(String,nullable=False)
-    description=Column(Text)
+    description=Column(Text)    
     priority=Column(Enum(Priority),nullable=False,default=Priority.routine)
     created_at=Column(DateTime(timezone=True),server_default=func.now())
 

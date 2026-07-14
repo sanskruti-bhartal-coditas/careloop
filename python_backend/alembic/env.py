@@ -9,6 +9,9 @@ from models.patient_model import Patient
 from models.patient_disease_model import Patient_Disease
 from models.patient_documents_model import Patient_Doc
 from models.schedule_model import Schedule
+from models.agent_model import RequestStatus,AppointmentRequest
+from models.panel_model import ReviewerName,ReviewStatus,NotificationType,PanelReview,PanelSummary,Notification
+
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config

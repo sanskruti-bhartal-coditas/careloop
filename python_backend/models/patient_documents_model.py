@@ -1,6 +1,7 @@
-from sqlalchemy import Column,ForeignKey,String,Enum,DateTime,func
+from sqlalchemy import Column,ForeignKey,String,Enum,DateTime,func,Text
 from pgvector.sqlalchemy import Vector
 from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.orm import relationship
 from dependencies.session import Base
 import uuid
 import enum
@@ -16,10 +17,10 @@ class Patient_Doc(Base):
     user_id=Column(UUID(as_uuid=True),ForeignKey("users.id"),nullable=False)
     document_url=Column(String,nullable=False)
     document_type=Column(Enum(DocumentType),nullable=False)
-    chunks=Column(Vector(384))
+    content=Column(Text)
     created_at=Column(DateTime(timezone=True),server_default=func.now())
     
-
+    request=relationship("AppointmentRequest",back_populates="documents")
 
 
 
