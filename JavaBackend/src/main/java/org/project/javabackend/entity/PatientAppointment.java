@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.project.javabackend.enums.AppointmentPriority;
 import org.project.javabackend.enums.AppointmentStatus;
-import org.project.javabackend.enums.AppointmentType;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -22,8 +21,8 @@ public class PatientAppointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private AppointmentType appointmentType;
+
+    private String appointmentType;
 
     private String disease;
 

@@ -50,7 +50,6 @@ public class PatientService {
 
 
         patientDetailsRepo.save(patientDetails);
-
-
+        return new GenericResponse(HttpStatus.OK,"profile updated successfully");
     }
 }
