@@ -1,6 +1,7 @@
 import { apiSlice } from "../redux/slices/apiSlice";
 
 interface UserDetails {
+  id:number,
   email: string;
   role: string;
 }
