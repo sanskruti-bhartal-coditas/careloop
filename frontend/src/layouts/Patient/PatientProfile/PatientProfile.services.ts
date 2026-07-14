@@ -5,7 +5,7 @@ export const patientProfileApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     updateProfile: builder.mutation<void, UpdateProfileRequest>({
       query: (data) => ({
-        url: 'auth/update-profile',
+        url: 'update-profile',
         method: 'POST',
         body: data,
       })
