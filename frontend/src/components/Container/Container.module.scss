@@ -1,0 +1,6 @@
+@use "../../css/theme" as *;
+
+.container{
+  @include grid-center;
+  background-color: $background;
+}
