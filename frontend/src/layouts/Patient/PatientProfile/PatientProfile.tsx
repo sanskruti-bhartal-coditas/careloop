@@ -7,10 +7,13 @@ import type { BackendError } from "../../../types/BackendError.types";
 import Form from "../../../components/Form/Form";
 import FormInput from "../../../components/FormInput/FormInput";
 import Button from "../../../components/Button/Button";
+import { useState } from "react";
 
 const PatientProfile = () => {
   const [updateProfile, updateProfileState] = useUpdateProfileMutation();
   const navigate = useNavigate();
+
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   const methods = useForm<UpdateProfileRequest>({
     defaultValues: {
@@ -69,17 +72,51 @@ const PatientProfile = () => {
         <FormInput
           name="age"
           label="Age: "
-          type="text"
+          type="number"
           placeholder="Enter age..."
           rules={{ required: "*Age is required" }}
         />
         <FormInput
           name="height"
           label="Height : "
-          type="text"
+          type="number"
           placeholder="Enter height..."
           rules={{ required: "*Height is required" }}
         />
+
+        <FormInput
+          name="weight"
+          label="Weight (kg)"
+          type="number"
+          placeholder="Enter weight..."
+          rules={{
+            required: "*Weight is required",
+            min: {
+              value: 1,
+              message: "Weight must be greater than 0",
+            },
+          }}
+        />
+
+        <FormInput
+          name="phone"
+          label="Phone Number"
+          type="text"
+          placeholder="Enter phone number..."
+          rules={{
+            required: "*Phone number is required",
+            pattern: {
+              value: /^[0-9]{10}$/,
+              message: "Enter a valid 10-digit phone number",
+            },
+          }}
+        />
+
+        <div>
+            <Button type="button" variant="secondary" onClick={() => setIsUploadModalOpen(true)}>
+                Upload Documents
+            </Button>
+        </div>
 
         <div>
           <Button type="submit" variant="primary" disabled={updateProfileState.isLoading}>
@@ -89,6 +126,10 @@ const PatientProfile = () => {
           <Button type="button" variant="secondary" onClick={handleCancel}>Cancel</Button>
         </div>
       </Form>
+
+      {isUploadModalOpen && (
+        <UploadDocuments onClose={() => setIsUploadModalOpen(false)} />
+      )}
     </div>
   );
 };
