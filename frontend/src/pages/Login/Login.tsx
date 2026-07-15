@@ -28,10 +28,13 @@ const Login = () => {
     mode: "onChange"
   });
 
-  const onEmailSubmit = async (data: SendOtpRequest) => {
+  const onEmailSubmit = async () => {
     try {
-      await requestOtp({ email: data.email }).unwrap();
-      setEmailSentTo(data.email);
+      const email = methods.getValues("email")
+      console.log(typeof {email:email});
+      
+      await requestOtp({email:email}).unwrap();
+      setEmailSentTo(email);
     } catch (err) {
       console.error("Failed to request OTP", err);
     }
@@ -62,6 +65,11 @@ const Login = () => {
             {(requestOtpState.error as BackendError)?.data?.error?.message || "Failed to send code."}
           </div>
         )}
+        {
+          emailSentTo && (
+            <div>Email is sent to {emailSentTo}!</div>
+          )
+        }
 
         <FormInput
           name="email"

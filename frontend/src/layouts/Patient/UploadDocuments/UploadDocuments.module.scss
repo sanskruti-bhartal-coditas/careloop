@@ -1,0 +1,33 @@
+@use "../../../../css/theme" as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  @include grid-center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: $form-background;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 350px;
+}
+
+.fileInput {
+  padding: 1rem 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}

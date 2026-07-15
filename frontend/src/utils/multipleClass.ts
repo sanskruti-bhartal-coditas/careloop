@@ -1,3 +1,3 @@
-export const multipleClass = (classes: Array<string>) => {
-  return classes.join(" ");
-}
+export const multipleClass = (classes: Array<string | undefined | null | false>) => {
+  return classes.filter(Boolean).join(" ");
+};
