@@ -5,13 +5,18 @@ from sqlalchemy.dialects.postgresql import UUID
 from dependencies.session import Base
 import enum
 
-class RequestStatus(str,enum.Enum):
-    pending="pending"
-    submitted="submitted"
-
+class RequestStatus(str, enum.Enum):
+    pending      = "PENDING"
+    submitted    = "SUBMITTED"
+    processing   = "PROCESSING"   
+    under_review = "UNDER_REVIEW"    
+    scheduled    = "SCHEDULED"
+    info_needed  = "INFO_NEEDED"
+    declined     = "DECLINED"
+    completed    = "COMPLETED"
+    
 class AppointmentRequest(Base):
     __tablename__ = "appointment_request"
-
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     patient_id = Column(UUID(as_uuid=True), ForeignKey("users.id", ondelete="CASCADE"))
     appointment_type = Column(String(100))
@@ -21,10 +26,7 @@ class AppointmentRequest(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
-
     documents = relationship("Patient_Doc", back_populates="request")
     panel_reviews = relationship("PanelReview", back_populates="request", cascade="all, delete-orphan")
     panel_summary = relationship("PanelSummary", back_populates="request", uselist=False, cascade="all, delete-orphan")
     notifications = relationship("Notification", back_populates="request")
-
-

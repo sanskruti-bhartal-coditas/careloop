@@ -35,5 +35,5 @@ async def fetch_all_documents(documents):
             results.append({
                 "document_type": doc["document_type"],
                 "text": ""})
-    return 
+    return results
 

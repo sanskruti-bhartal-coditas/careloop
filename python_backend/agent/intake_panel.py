@@ -90,3 +90,5 @@ async def create_notifications(db: AsyncSession,request: AppointmentRequest,prio
         message=f"New appointment request received. Suggested priority: {priority}.")
     db.add(coordinator_notification)
     await db.commit()
+
+    

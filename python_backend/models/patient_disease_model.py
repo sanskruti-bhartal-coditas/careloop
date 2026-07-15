@@ -5,9 +5,9 @@ from sqlalchemy.dialects.postgresql import UUID
 import enum
 
 class Priority(str,enum.Enum):
-    routine="routine"
-    soon="soon"
-    urgent="urgent"
+    routine="ROUTINE"
+    soon="SOON"
+    urgent="URGENT"
 
 class Patient_Disease(Base):
     __tablename__="patient_disease"

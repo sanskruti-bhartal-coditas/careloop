@@ -5,9 +5,9 @@ import uuid
 import enum
 
 class Role(str,enum.Enum):
-    patient="patient"
-    coordinator="coordinator"
-    admin="admin"
+    patient="PATIENT"
+    coordinator="COORDINATOR"
+    admin="ADMIN"
 
 class Users(Base):
     __tablename__="users"

@@ -7,24 +7,25 @@ import enum
 
 
 class ReviewStatus(str,enum.Enum):
-    pending="pending"
-    completed="completed"
+    pending="PENDING"
+    completed="COMPLETED"
 
 class ReviewerName(str,enum.Enum):
-    summarizer="summarizer"
+    summarizer="SUMMARIZER"
+    document_checker="DOCUMET_CHECKER"
 
 class NotificationType(str,enum.Enum):
-    schedule="schedule"
-    new_request="new_request"
-    otp="otp"
-    welcome="welcome"
-    panel_complete="panel_complete"
+    schedule="SCHEDULE"
+    new_request="NEW_REQUEST"
+    otp="OTP"
+    welcome="WELCOME"
+    panel_complete="PANEL_COMPLETE"
 
 class PanelReview(Base):
     __tablename__ = "panel_review"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    request_id = Column(UUID(as_uuid=True), ForeignKey("appointment_request.id", ondelete="CASCADE"), index=True)
+    # request_id = Column(UUID(as_uuid=True), ForeignKey("appointment_request.id", ondelete="CASCADE"), index=True)
     reviewer_name = Column(Enum(ReviewerName), nullable=False)
     findings = Column(Text)
     status = Column(Enum(ReviewStatus), default=ReviewStatus.pending)
@@ -62,3 +63,10 @@ class Notification(Base):
 
 
     request = relationship("AppointmentRequest", back_populates="notifications")
+
+
+
+
+
+
+    
