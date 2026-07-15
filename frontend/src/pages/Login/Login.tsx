@@ -63,6 +63,11 @@ const Login = () => {
             {(requestOtpState.error as BackendError)?.data?.error?.message || "Failed to send code."}
           </div>
         )}
+        {
+          emailSentTo && (
+            <div>Email is sent to {emailSentTo}!</div>
+          )
+        }
 
         <FormInput
           name="email"
