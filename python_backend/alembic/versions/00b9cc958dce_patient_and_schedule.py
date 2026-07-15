@@ -36,7 +36,7 @@ def upgrade() -> None:
     sa.Column('user_id', sa.UUID(), nullable=False),
     sa.Column('document_url', sa.String(), nullable=False),
     sa.Column('document_type', sa.Enum('referral_letter', 'insurance_card', 'previous_report', name='documenttype'), nullable=False),
-    sa.Column('chunks', pgvector.sqlalchemy.vector.VECTOR(dim=384), nullable=True),
+    # sa.Column('chunks', pgvector.sqlalchemy.vector.VECTOR(dim=384), nullable=True),
     sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
