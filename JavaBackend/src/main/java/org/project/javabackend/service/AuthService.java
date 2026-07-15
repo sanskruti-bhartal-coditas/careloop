@@ -53,7 +53,7 @@ public class AuthService {
         // checking the expiration on the otp
         boolean isValid = otpValidation.getExpirationTime().before(new Date());
 
-        if (!isValid) {
+        if (isValid) {
             throw new CustomException(HttpStatus.BAD_REQUEST, "the OTP is expired ");
         }
 
