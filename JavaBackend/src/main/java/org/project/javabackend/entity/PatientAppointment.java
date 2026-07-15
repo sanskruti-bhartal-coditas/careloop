@@ -3,7 +3,6 @@ package org.project.javabackend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.project.javabackend.enums.AppointmentPriority;
-import org.project.javabackend.enums.AppointmentStatus;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,8 +36,7 @@ public class PatientAppointment {
 
     private LocalDateTime updatedAt;
 
-    @Enumerated(EnumType.STRING)
-    private AppointmentStatus appointmentStatus;
+
 
     // mapping
     @ManyToOne

@@ -9,7 +9,6 @@ import jakarta.validation.constraints.NotBlank;
 import org.project.javabackend.entity.AppointmentDocument;
 import org.project.javabackend.entity.PatientDetails;
 import org.project.javabackend.enums.AppointmentPriority;
-import org.project.javabackend.enums.AppointmentStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
