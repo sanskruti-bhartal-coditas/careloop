@@ -31,7 +31,9 @@ const Login = () => {
   const onEmailSubmit = async () => {
     try {
       const email = methods.getValues("email")
-      await requestOtp(email).unwrap();
+      console.log(typeof {email:email});
+      
+      await requestOtp({email:email}).unwrap();
       setEmailSentTo(email);
     } catch (err) {
       console.error("Failed to request OTP", err);
