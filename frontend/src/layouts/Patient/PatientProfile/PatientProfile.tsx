@@ -8,6 +8,7 @@ import Form from "../../../components/Form/Form";
 import FormInput from "../../../components/FormInput/FormInput";
 import Button from "../../../components/Button/Button";
 import { useState } from "react";
+import UploadDocuments from "../UploadDocuments/UploadDocuments";
 
 const PatientProfile = () => {
   const [updateProfile, updateProfileState] = useUpdateProfileMutation();
