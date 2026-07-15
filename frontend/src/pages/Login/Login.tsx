@@ -28,10 +28,11 @@ const Login = () => {
     mode: "onChange"
   });
 
-  const onEmailSubmit = async (data: SendOtpRequest) => {
+  const onEmailSubmit = async () => {
     try {
-      await requestOtp({ email: data.email }).unwrap();
-      setEmailSentTo(data.email);
+      const email = methods.getValues("email")
+      await requestOtp(email).unwrap();
+      setEmailSentTo(email);
     } catch (err) {
       console.error("Failed to request OTP", err);
     }
